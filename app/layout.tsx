@@ -7,21 +7,21 @@ import { type } from 'os'
 
 
 export const metadata: Metadata = {
-  title: 'Coformatique',
-  description: "Welcome to Coformatique, where innovation meets creativity to bring you the most cutting-edge solutions for all your technological needs",
-  metadataBase: new URL('https://cofo.netlify.app'),
+  title: 'Trend Car Rental',
+  description: "Welcome to Trend Car Rental, where innovation meets creativity to bring you the most cutting-edge solutions for all your rentals needs.",
+  metadataBase: new URL('https://trendcarrental.netlify.app'),
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Coformatique',
-    description: "Welcome to Coformatique, where innovation meets creativity to bring you the most cutting-edge solutions for all your technological needs",
-    
+    title: 'Trend Car Rental',
+    description: "Welcome to Trend Car Rental, where innovation meets creativity to bring you the most cutting-edge solutions for all your rentals needs.",
+
   },
   openGraph: {
-    title: 'Coformatique',
-    description: 'Coformatique is a digital agency that specializes in web development, mobile development, cloud computing, and more. ',
-    url: 'https://cofo.netlify.app',
-    siteName: 'Coformatique',
+    title: 'Trend Car Rental',
+    description: 'Trend Car Rental is a digital agency that specializes in car rental and transportation. ',
+    url: 'https://trendcarrental.netlify.app',
+    siteName: 'Trend Car Rental',
     locale: 'en_US',
     type: 'website',
   },
