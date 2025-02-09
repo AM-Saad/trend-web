@@ -63,6 +63,7 @@ const Collection: React.FC<{ services: IProp }> = ({ services }) => {
                                     "col-span-2";
                         if (section.fields.displayInHome)
                             return <motion.div
+                            key={index}
                                 className={`bg-black rounded-lg p-5 shadow-xl shadow-zinc-900 ${bgClass}`}
                                 variants={{
                                     hidden: {

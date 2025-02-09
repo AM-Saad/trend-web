@@ -4,7 +4,7 @@ import { PORTFOLIO_PAGE } from '@/lib/constants';
 import client from '@/lib/contentful'
 import Section from '@/app/collection/section';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ISection } from '@/components/home/Collection';
 
 
@@ -22,19 +22,21 @@ const Collection = () => {
         }
     }
 
-    const getData = async () => {
-        setIsLoading(true)
-        const data = await fetchData()
-        setIsLoading(false)
+    const getData = useCallback(() =>{
+        async () => {
+            setIsLoading(true)
+            const data = await fetchData()
+            setIsLoading(false)
 
-        if (data) {
-            setPageContent(data)
+            if (data) {
+                setPageContent(data)
+            }
         }
-    }
+    },[])
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [getData])
 
     if (isLoading) {
         return <p>Loading...</p>

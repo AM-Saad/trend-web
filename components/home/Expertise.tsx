@@ -18,8 +18,8 @@ const Expertise: React.FC<{ services: any }> = ({ services }) => {
             <Grid>
                 {services.sections.map((section: any, index: number) => {
                     if (section.fields.displayInHome)
-                        return <Link href={`/services#${section.fields.title}`}>
-                            <Card style='h-40' key={index}>
+                        return <Link  key={index} href={`/services#${section.fields.title}`}>
+                            <Card style='h-40' >
                                 <h3 className='font-bold sm:text-lg mb-3 text-brand line-clamp-1'>{section.fields.title}</h3>
                                 <p className='text-paragraph text-sm max-h-[75px] line-clamp-4 md:line-clamp-3'>{section.fields.homeShortText}</p>
                             </Card>
