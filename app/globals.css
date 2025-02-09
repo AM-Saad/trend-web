@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+  font-family: 'Tajawal', sans-serif;
+  letter-spacing: 0.025em;
+  background-color: #222;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#about ul,
+#services ul {
+  list-style: none;
+  padding: 0 0;
+  /* margin-left: 0.75rem; */
+  padding-bottom: 0;
+}
+
+#about ul li::before,
+#services ul li::before {
+  content: '=>   ';
+  color: #ff6a01bf;
+  font-size: .9rem;
+
+}
+#about ul li,
+#services ul li {
+  display: flex;
+  gap : 0.5rem;
+}
+
+button {
+  background-size: 400% 400%;
+
+  animation: gradient 1s ease infinite;
+}
+
+.title{
+  @apply font-bold text-3xl md:text-5xl text-white
+}
+.subtitle{
+   @apply text-left text-white text-xl md:text-2xl md:mt-4 mt-2 font-medium
+}
+.description{
+  @apply mt-4 text-white
+}
+
+
+.section-title{
+  @apply font-bold text-2xl md:text-3xl text-white mb-4
+}
+
+.section-subtitle{
+  @apply mb-5 text-white text-lg
+}
+.section-content{
+  @apply text-white
+}
+.section-content > ul {
+  @apply my-4
+}
+
+.section-content > ul li{
+  @apply my-2
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@keyframes rotateX {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(2880deg);
+    /* 8 times 360 */
+  }
+}
+
+.accelerate {
+  animation: rotateX 3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
+
+
+.chrome {
+  background: #000 -webkit-gradient(linear, right top, left top, from(#000), to(#000), color-stop(0.5, #fff)) 0 0 no-repeat;
+  /* background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%); */
+  color: #0304137a;
+  animation: shine 4s infinite;
+  -webkit-background-size: 200px;
+  -webkit-background-clip: text;
+  text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shine {
+
+  0%,
+  10% {
+    background-position: -1000px;
+  }
+
+  20% {
+    background-position: top left;
+  }
+
+  90% {
+    background-position: top right;
+  }
+
+  100% {
+    background-position: 1000px;
+  }
+}
+
+
+
+.wave {
+  animation-name: wave-animation;
+  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;
+  /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  transform-origin: 70% 70%;
+  /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0.0deg)
+  }
+
+  10% {
+    transform: rotate(14.0deg)
+  }
+
+  /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8.0deg)
+  }
+
+  30% {
+    transform: rotate(14.0deg)
+  }
+
+  40% {
+    transform: rotate(-4.0deg)
+  }
+
+  50% {
+    transform: rotate(10.0deg)
+  }
+
+  60% {
+    transform: rotate(0.0deg)
+  }
+
+  /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0.0deg)
+  }
+}
+
+
+@keyframes animate-dash {
+  0% {
+      stroke-dasharray: 380;
+      /* stroke: #1d1d1d; */
+  }
+  50% {
+      stroke-dasharray: 0;
+      /* stroke: orange; */
+
+  }
+  100% {
+      stroke-dasharray: 380;
+      /* stroke: #1d1d1d; */
+  }
+}
+#eMKSLui7RlY1 path {
+  animation: animate-dash 4s infinite ease-in-out;
+    stroke: #fff;
+
+}
+
+
+
+
+
+.parallax {
+    overflow: hidden;
+    letter-spacing: -2px;
+    line-height: 0.8;
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+  }
