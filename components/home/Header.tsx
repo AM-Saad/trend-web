@@ -1,10 +1,8 @@
 "use client"
 import Balancer from "react-wrap-balancer";
-import { motion, useAnimationFrame, useMotionValue, useScroll, useSpring, useTransform, useVelocity, Variant, Variants } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { FADE_DOWN_ANIMATION_VARIANTS, FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
 import Button from "@/components/shared/Button";
-import { wrap } from "@motionone/utils";
-import { useRef } from "react";
 
 const Header: React.FC<{ title: string, subHeading: any, image: any, bannerTransparent: any }> = ({ title, subHeading, image, bannerTransparent }) => {
     const { scrollY } = useScroll()
@@ -20,6 +18,7 @@ const Header: React.FC<{ title: string, subHeading: any, image: any, bannerTrans
 
         }
     }
+    console.log(image.fields.file.url)
     return (
         <motion.div
             className="relative overflow-hidden md:h-[60vh] rounded-md mb-4">

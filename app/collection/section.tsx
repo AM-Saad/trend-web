@@ -33,7 +33,7 @@ const Section = ({ index, section }: {index:number,section:ISection}) => {
         >
             <div className='col-span-2 object-contain h-3/4 flex rounded-2xl shadow-md overflow-hidden p-2 bg-white'>
                 <Image
-                    src={"https:" + section.fields.logo.fields.file.url}
+                    src={"https://" + section.fields.logo.fields.file.url}
                     alt={section.fields.logo.fields.title}
                     width={200}
                     height={400}

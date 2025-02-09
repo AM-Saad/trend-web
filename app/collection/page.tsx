@@ -22,16 +22,15 @@ const Collection = () => {
         }
     }
 
-    const getData = useCallback(() =>{
-        async () => {
+    const getData = useCallback( async () => {
             setIsLoading(true)
             const data = await fetchData()
             setIsLoading(false)
-
+            console.log(data)
             if (data) {
                 setPageContent(data)
             }
-        }
+
     },[])
 
     useEffect(() => {

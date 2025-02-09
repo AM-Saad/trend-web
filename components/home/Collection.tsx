@@ -1,7 +1,6 @@
 'use client'
 import React, { useRef } from 'react'
-import Image from 'next/image'
-import { motion, useScroll, useSpring, useTransform, Variant, Variants } from 'framer-motion'
+import { motion, useScroll} from 'framer-motion'
 import Button from '../shared/Button'
 
 
@@ -74,7 +73,7 @@ const Collection: React.FC<{ services: IProp }> = ({ services }) => {
                                     }
                                 }}
                             >
-                                <Image
+                                <motion.img
                                     src={"https:" + section.fields.logo.fields.file.url}
                                     alt={section.fields.logo.fields.title}
                                     width={3000}
