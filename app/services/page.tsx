@@ -8,8 +8,8 @@ import { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-  title: 'Services | Coformatique',
-  description: "Welcome to Coformatique, where innovation meets creativity to bring you the most cutting-edge solutions for all your technological needs",
+  title: 'Services | Trend Car Rental',
+  description: "Welcome to Trend Car Rental, where innovation meets creativity to bring you the most cutting-edge solutions for all your rentals needs.",
 }
 
 async function getData() {

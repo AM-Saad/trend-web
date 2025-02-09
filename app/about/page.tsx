@@ -6,8 +6,8 @@ import { Metadata } from 'next';
 import Founder from '@/assets/images/founder.png'
 import Image from 'next/image';
 export const metadata: Metadata = {
-  title: 'About us | Coformatique',
-  description: "Welcome to Coformatique, where innovation meets creativity to bring you the most cutting-edge solutions for all your technological needs",
+  title: 'About us | Trend Car Rental',
+  description: "Welcome to Trend Car Rental, where innovation meets creativity to bring you the most cutting-edge solutions for all your rentals needs.",
 }
 
 async function getData() {
