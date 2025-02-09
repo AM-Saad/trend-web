@@ -5,7 +5,7 @@ const nextConfig = {
   experimental:{
     serverActions: true,
   },
-  
+
   images: {
     domains: ["images.unsplash.com","images.ctfassets.net"],
   },
@@ -35,8 +35,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/bitbucket",
-        destination: "https://bitbucket.org/coformatique/cofo-web",
+        source: "/github",
+        destination: "https://github.com/AM-Saad/trend-web",
         permanent: false,
       },
     ];
