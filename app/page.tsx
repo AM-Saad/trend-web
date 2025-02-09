@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from "@/components/home/Header";
 import Expertise from "@/components/home/Expertise";
-import Collection from "@/components/home/Collection";
 import client from '@/lib/contentful'
 import Sections from '@/components/shared/Section';
 import { HOME_PAGE, SERVICES_PAGE, PORTFOLIO_PAGE } from '@/lib/constants';
@@ -9,9 +8,28 @@ import { transformSections } from '@/lib/utils';
 import Skills from '@/components/shared/Skills';
 import { Testimonials } from '@/components/home/Testimonials';
 import { ParallaxText } from '@/components/home/ParallaxProps';
+import Section from './collection/section';
+import { Collection } from '@/components/home/Collection';
 
 
+export interface ISection
+    {
+        fields:{
+            title:string
+            subTitle:string
+            displayInHome:boolean
+            homeShortText:string
+            logo:{
+                fields: { title: string, file: {
+                    url:string
+                } }
+            }
+            content:{
+                content:unknown[]
+            }
+        }
 
+}
 
 async function getData() {
   const res = await client.getEntries({ content_type: HOME_PAGE })
@@ -35,14 +53,13 @@ const Home = async () => {
   const services: any = await getServices()
 
   const portfolio: any = await getPortfolio()
-
   return (
     <>
       <Header title={title} subHeading={subHeading} image={banner} bannerTransparent={bannerTransparent}/>
       <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
       <ParallaxText baseVelocity={5}>Test velocity</ParallaxText>
       <Expertise services={services} />
-      <Collection services={portfolio} />
+        <Collection sections={portfolio.sections}/>
       <div className='mt-24'>
         <Skills />
       </div>

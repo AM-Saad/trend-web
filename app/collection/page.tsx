@@ -2,13 +2,12 @@
 'use client'
 import { PORTFOLIO_PAGE } from '@/lib/constants';
 import client from '@/lib/contentful'
-import Section from '@/app/collection/section';
-import { motion } from 'framer-motion';
+
 import { useCallback, useEffect, useState } from 'react';
-import { ISection } from '@/components/home/Collection';
+import { Collection } from '@/components/home/Collection';
 
 
-const Collection = () => {
+const Collections = () => {
     const [pageContent, setPageContent] = useState<any>(null)
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
@@ -40,18 +39,7 @@ const Collection = () => {
     if (isLoading) {
         return <p>Loading...</p>
     }
-    const gridContainerVariants = {
-        hidden: {
-            opacity: 0
-        },
-        show: {
-            opacity: 1,
-            transition: {
-                duration: 1,
-                staggerChildren: .5
-            }
-        },
-    }
+
 
     return (
         <div id='services'>
@@ -61,18 +49,9 @@ const Collection = () => {
                 <p className='description'>{pageContent.description}</p>
             </div>
 
-            {pageContent.sections &&
-                <motion.div
-
-                    className='max-w-full grid md:grid-cols-2 lg:grid-cols-3 pb-2 gap-4'
-                    initial="hidden"
-                    animate="show"
-                    variants={gridContainerVariants}
-                >
-                    {pageContent.sections.map((section: ISection, index: number) => <Section key={index} index={index} section={section} />)}
-                </motion.div>
+            {pageContent.sections && <Collection sections={pageContent.sections} />
             }
         </div>
     )
 }
-export default Collection;
+export default Collections;
